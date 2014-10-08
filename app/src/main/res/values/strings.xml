@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cheetah_mobile</string>
+    <string name = "NewGame">NEW GAME</string>
+    <string name = "Records">RECORDS</string>
+    <string name = "About">ABOUT</string>
+    <string name = "Exit">EXIT</string>
+    <string name = "Back">BACK</string>
+    <string name = "GO">GO and CALC</string>
+    <string name = "YourAnswerIs">Your answer is...</string>
+    <string name = "actionPlus">+ plus +</string>
+    <string name = "actionMinus">- minus -</string>
+    <string name = "actionMult">* mult *</string>
+    <string name = "actionDiv">/ divide /</string>
+    <string name = "Next">NEXT</string>
+    <string name = "digit_0">0</string>
+    <string name = "digit_1">1</string>
+    <string name = "digit_2">2</string>
+    <string name = "digit_3">3</string>
+    <string name = "digit_4">4</string>
+    <string name = "digit_5">5</string>
+    <string name = "digit_6">6</string>
+    <string name = "digit_7">7</string>
+    <string name = "digit_8">8</string>
+    <string name = "digit_9">9</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

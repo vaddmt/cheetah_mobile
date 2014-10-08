@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ButtonMain" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_main_states</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="ButtonSelect" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_select_states</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="ButtonDigit" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_digit_states</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+</resources>

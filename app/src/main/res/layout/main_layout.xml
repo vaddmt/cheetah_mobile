@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".cheetah">
+
+    <cheetah.cheetah_GUI.ViewBackground
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/NewGame"
+            android:id="@+id/btnNewGame"
+            style="@style/ButtonMain"
+            android:layout_marginTop="40dp"
+            android:onClick="onClickNewGame"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Records"
+            android:id="@+id/btnRecords"
+            style="@style/ButtonMain"
+            android:layout_marginTop="5dp"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/About"
+            android:id="@+id/btnAbout"
+            style="@style/ButtonMain"
+            android:layout_marginTop="5dp"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Exit"
+            android:id="@+id/btnExit"
+            style="@style/ButtonMain"
+            android:layout_marginTop="5dp"
+            android:onClick="onClickClose"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
