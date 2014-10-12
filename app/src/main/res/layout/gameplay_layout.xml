@@ -6,8 +6,8 @@
 
     <cheetah.cheetah_GUI.ViewBackground
         android:id="@+id/view_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -43,7 +43,7 @@
                 android:textSize="@dimen/text_size_24"
                 android:gravity="center_vertical|right"
                 android:layout_marginRight="5dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/gray" />
         </TableRow>
 
         <TextView
@@ -248,5 +248,10 @@
         </TableRow>
 
     </LinearLayout>
+
+    <cheetah.cheetah_GUI.ViewGraphics
+        android:id="@+id/view_graphics"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 
 </RelativeLayout>

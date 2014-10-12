@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import cheetah.cheetah_GUI.CheetahTextField;
+import cheetah.cheetah_GUI.ViewGraphics;
 import cheetah.cheetah_LGC.GameMode;
 import cheetah.cheetah_MGR.Globals;
 import cheetah.cheetah_MGR.Messenger;
@@ -139,9 +140,32 @@ public class cheetah extends Activity {
             answer = Integer.parseInt(((CheetahTextField)findViewById(R.id.txtResultValue)).getText().toString());
         }
         catch (NumberFormatException ex) {
-            Messenger.showException("ERROR:", ex);
+            answer = 0;
         }
-        GM.checkCurrentTask(answer);
+        if(GM.checkCurrentTask(answer) == 1) {
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    try {
+                        ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("CORRECT", 0, 255, 0);
+                    }
+                    catch (final Exception ex) {
+                        Messenger.showException("EXCEPTION in thread:", ex);
+                    }
+                }
+            });
+        }
+        else {
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    try {
+                        ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("WRONG", 255, 0, 0);
+                    }
+                    catch (final Exception ex) {
+                        Messenger.showException("EXCEPTION in thread:", ex);
+                    }
+                }
+            });
+        }
         GM.genNextTask();
         showCurrentTask();
     }
