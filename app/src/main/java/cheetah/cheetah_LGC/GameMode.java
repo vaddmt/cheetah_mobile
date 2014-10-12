@@ -17,7 +17,7 @@ public class GameMode {
         setGameType(type);
 
         try {
-            // [0] - first operand; [1] - second operand; [3] - operation type; [4] - result
+            // [0] - first operand; [1] - second operand; [2] - operation type; [3] - result
             currentTask   = new int[4];
             min_max_LO    = new int[2];
             min_max_LO[0] = 1;
@@ -90,11 +90,35 @@ public class GameMode {
         }
     }
 
+    private int calculateBonus() {
+        int bonus = 0;
+        int calculationWeight = (currentTask[0] > currentTask[1]) ? currentTask[0] : currentTask[1];
+            calculationWeight = (calculationWeight > currentTask[3]) ? calculationWeight : currentTask[3];
+        switch(currentTask[2]) {
+            case Globals.OPERATION_PLUS:
+                bonus = 100;
+                break;
+            case Globals.OPERATION_MINUS:
+                bonus = 100;
+                break;
+            case Globals.OPERATION_MULTIPLY:
+                bonus = 130;
+                break;
+            case Globals.OPERATION_DIVIDE:
+                bonus = 200;
+                break;
+            default:
+                bonus = 0;
+                break;
+        }
+        return bonus + calculationWeight;
+    }
+
     public int checkCurrentTask(int answer) {
         int res = (answer == currentTask[3]) ? 1 : 0;
         result.increaseQuestionCounter();
         result.increaseCorrectAnswerCounter(res);
-        result.increasePointsTotal(res * 500);
+        result.increasePointsTotal(res * calculateBonus());
         return res;
     }
 

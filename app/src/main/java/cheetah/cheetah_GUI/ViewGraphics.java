@@ -42,7 +42,6 @@ public class ViewGraphics extends View {
             paint.setTextSize(120);
             paint.setTextAlign(Paint.Align.CENTER);
             paint.setShadowLayer(50, 0, 0, Globals.drawColor);
-            paint.setStrokeMiter(1);
         }
         catch (OutOfMemoryError ex) {
             Messenger.showError("ERROR:", ex);
