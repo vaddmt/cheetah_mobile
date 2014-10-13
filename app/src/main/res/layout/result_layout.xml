@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".cheetah">
+
+    <cheetah.cheetah_GUI.ViewBackground
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/GameOver"
+            android:id="@+id/txtGameOver"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size_48"
+            android:textStyle="bold"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/red" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/YouDoneIt"
+            android:id="@+id/txtYouDone"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size_24"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="5dp" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CurrGameMode"
+                    android:id="@+id/txtGM_Mode"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtGM_ModeValue"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CurrGamePoints"
+                    android:id="@+id/txtGM_Points"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtGM_PointsValue"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CurrCorrAnswers"
+                    android:id="@+id/txtGM_Answers"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtGM_AnswersValue"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Back"
+                android:id="@+id/btnBackToMainFromResults"
+                style="@style/ButtonMain"
+                android:onClick="onClickBackToMain"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/TryAgain"
+                android:id="@+id/btnTryAgain"
+                style="@style/ButtonMain"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

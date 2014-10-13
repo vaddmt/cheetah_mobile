@@ -3,12 +3,12 @@ package cheetah.cheetah_mobile;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import cheetah.cheetah_GUI.CheetahTextField;
 import cheetah.cheetah_GUI.ViewGraphics;
 import cheetah.cheetah_LGC.GameMode;
@@ -19,6 +19,8 @@ public class cheetah extends Activity {
 
     private GameMode GM;
     private int      chosenGameType = 0;
+    private Handler  handler;
+    private Thread   time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,26 @@ public class cheetah extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
 
         GM = new GameMode(0);
+        handler = new Handler() {
+            public void handleMessage(android.os.Message msg) {
+                if(msg.what == 1) {
+                    try {
+                        ((TextView)findViewById(R.id.txtTimeLeft)).setText("Time left: " + Integer.toString(GM.gameTimeLeft()));
+                    }
+                    catch (NullPointerException ex) {
+                        Messenger.showException("EXCEPTION in handler:", ex);
+                    }
+                }
+                else if(msg.what == 2) {
+                    GM.endGame();
+                    setContentView(R.layout.result_layout);
+                    ((TextView)findViewById(R.id.txtGM_ModeValue)).setText(Integer.toString(GM.getGameType()));
+                    ((TextView)findViewById(R.id.txtGM_PointsValue)).setText(Integer.toString(GM.getCurrentPoints()));
+                    ((TextView)findViewById(R.id.txtGM_AnswersValue)).setText(Integer.toString(GM.getCorrectAnswers()));
+                }
+            }
+        };
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,10 +109,28 @@ public class cheetah extends Activity {
         catch (OutOfMemoryError ex) {
             Messenger.showError("ERROR:", ex);
         }
+
+        time = new Thread(new Runnable() {
+           public void run() {
+               while(GM.gameTimeLeft() > 0) {
+                   try {
+                       GM.gameTimeDecrease();
+                       handler.sendEmptyMessage(1);
+                       Thread.sleep(1000);
+                   }
+                   catch (InterruptedException ex) {
+                       Messenger.showException("EXCEPTION in timer:", ex);
+                   }
+               }
+               handler.sendEmptyMessage(2);
+           }
+        });
+        time.start();
     }
 
     // THIRD PAGE BUTTONS
     public void onClickBackToSelect(View view) {
+        GM.endGame();
         setContentView(R.layout.modes_select_layout);
     }
 
@@ -114,6 +152,7 @@ public class cheetah extends Activity {
         ((TextView)findViewById(R.id.txtFirstValue)).setText(Integer.toString(GM.getCurrentFirstVal()));
         ((TextView)findViewById(R.id.txtSecondValue)).setText(Integer.toString(GM.getCurrentSecondVal()));
         ((TextView)findViewById(R.id.txtPointsEarned)).setText("Points: " + Integer.toString(GM.getCurrentPoints()));
+        ((TextView)findViewById(R.id.txtTimeLeft)).setText("Time left: " + Integer.toString(GM.gameTimeLeft()));
 
         switch(GM.getCurrentTaskType()) {
             case Globals.OPERATION_PLUS:
@@ -169,4 +208,7 @@ public class cheetah extends Activity {
         GM.genNextTask();
         showCurrentTask();
     }
+
+    // FOURTH PAGE BUTTONS
+
 }

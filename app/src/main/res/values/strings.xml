@@ -8,6 +8,7 @@
     <string name = "Exit">EXIT</string>
     <string name = "Back">BACK</string>
     <string name = "GO">GO and CALC</string>
+    <string name = "TryAgain">TRY AGAIN</string>
     <string name = "YourAnswerIs">Your answer is...</string>
     <string name = "actionPlus">+ addition +</string>
     <string name = "actionMinus">- subtraction -</string>
@@ -24,6 +25,11 @@
     <string name = "digit_7">7</string>
     <string name = "digit_8">8</string>
     <string name = "digit_9">9</string>
+    <string name = "GameOver">GAME OVER</string>
+    <string name = "YouDoneIt">You have done it!</string>
+    <string name = "CurrGameMode">Game Mode:</string>
+    <string name = "CurrGamePoints">Points total:</string>
+    <string name = "CurrCorrAnswers">Correct answers:</string>
     <string name="action_settings">Settings</string>
 
 </resources>

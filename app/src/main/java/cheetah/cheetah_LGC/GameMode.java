@@ -6,6 +6,7 @@ import cheetah.cheetah_MGR.Messenger;
 public class GameMode {
 
     private int           gameType;
+    private int           gameTimeLeft;
     private int[]         min_max_LO, min_max_HI;
     private int[]         currentTask;
     private GameResult    result;
@@ -15,6 +16,7 @@ public class GameMode {
 
         // from 0 to 4
         setGameType(type);
+        gameTimeLeft = 60;
 
         try {
             // [0] - first operand; [1] - second operand; [2] - operation type; [3] - result
@@ -35,6 +37,19 @@ public class GameMode {
 
         // set to 0
         resetTask();
+    }
+
+    public void endGame() {
+        gameTimeLeft = 0;
+    }
+
+    public void gameTimeDecrease() {
+        if(gameTimeLeft > 0)
+            gameTimeLeft--;
+    }
+
+    public int gameTimeLeft() {
+        return gameTimeLeft;
     }
 
     public void genNextTask() {
@@ -92,6 +107,7 @@ public class GameMode {
 
     private int calculateBonus() {
         int bonus = 0;
+        int typeBonus = (gameType == 0) ? 40 : 0;
         int calculationWeight = (currentTask[0] > currentTask[1]) ? currentTask[0] : currentTask[1];
             calculationWeight = (calculationWeight > currentTask[3]) ? calculationWeight : currentTask[3];
         switch(currentTask[2]) {
@@ -111,7 +127,7 @@ public class GameMode {
                 bonus = 0;
                 break;
         }
-        return bonus + calculationWeight;
+        return bonus +  + typeBonus + calculationWeight;
     }
 
     public int checkCurrentTask(int answer) {
@@ -136,6 +152,10 @@ public class GameMode {
         }
     }
 
+    public int getGameType() {
+        return gameType;
+    }
+
     public int getCurrentFirstVal() {
         return currentTask[0];
     }
@@ -154,5 +174,9 @@ public class GameMode {
 
     public int getCurrentPoints() {
         return result.getPointsTotal();
+    }
+
+    public int getCorrectAnswers() {
+        return result.getCorrectAnswerCounter();
     }
 }
