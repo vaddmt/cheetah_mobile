@@ -101,6 +101,9 @@ public class cheetah extends Activity {
     }
 
     public void onClickStartGame(View view) {
+
+        Globals.drawAlpha = 0;
+
         try {
             GM = new GameMode(chosenGameType);
             GM.genNextTask();
@@ -115,14 +118,18 @@ public class cheetah extends Activity {
                while(GM.gameTimeLeft() > 0) {
                    try {
                        GM.gameTimeDecrease();
-                       handler.sendEmptyMessage(1);
+                       if(GM.gameTimeLeft() == 0) {
+                           handler.sendEmptyMessage(2);
+                       }
+                       else {
+                           handler.sendEmptyMessage(1);
+                       }
                        Thread.sleep(1000);
                    }
                    catch (InterruptedException ex) {
                        Messenger.showException("EXCEPTION in timer:", ex);
                    }
                }
-               handler.sendEmptyMessage(2);
            }
         });
         time.start();
