@@ -24,6 +24,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="@string/actionPlus"
+            android:textColor="@color/yellow"
             android:id="@+id/btnModePlus"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -35,6 +37,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="@string/actionMinus"
+            android:textColor="@color/yellow"
             android:id="@+id/btnModeMinus"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -46,6 +50,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="@string/actionMult"
+            android:textColor="@color/yellow"
             android:id="@+id/btnModeMult"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -57,6 +63,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="@string/actionDiv"
+            android:textColor="@color/yellow"
             android:id="@+id/btnModeDiv"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -68,6 +76,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="ALL"
+            android:textColor="@color/yellow"
             android:id="@+id/btnModeALL"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
