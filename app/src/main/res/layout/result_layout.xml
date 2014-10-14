@@ -143,7 +143,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/TryAgain"
                 android:id="@+id/btnTryAgain"
-                android:onClick="onClickStartGame"
                 style="@style/ButtonMain"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"

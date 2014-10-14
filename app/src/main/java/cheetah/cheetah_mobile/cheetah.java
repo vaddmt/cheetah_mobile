@@ -22,7 +22,6 @@ public class cheetah extends Activity {
     private Handler  handler;
     private Thread   time;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
