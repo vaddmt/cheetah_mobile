@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import cheetah.cheetah_GUI.CheetahTextField;
 import cheetah.cheetah_GUI.ViewGraphics;
+import cheetah.cheetah_GUI.CheetahImageButton;
 import cheetah.cheetah_LGC.GameMode;
 import cheetah.cheetah_MGR.Globals;
 import cheetah.cheetah_MGR.Messenger;
@@ -42,9 +43,10 @@ public class cheetah extends Activity {
                 else if(msg.what == 2) {
                     GM.endGame();
                     setContentView(R.layout.result_layout);
-                    ((TextView)findViewById(R.id.txtGM_ModeValue)).setText(Integer.toString(GM.getGameType()));
+                    ((TextView)findViewById(R.id.txtGM_ModeValue)).setText(getGameTypeString(GM.getGameType()));
                     ((TextView)findViewById(R.id.txtGM_PointsValue)).setText(Integer.toString(GM.getCurrentPoints()));
-                    ((TextView)findViewById(R.id.txtGM_AnswersValue)).setText(Integer.toString(GM.getCorrectAnswers()));
+                    ((TextView)findViewById(R.id.txtGM_AnswersValue)).setText(Integer.toString(GM.getCorrectAnswers()) +
+                                                                        "/" + Integer.toString(GM.getTotalQuestions()));
                 }
             }
         };
@@ -72,6 +74,32 @@ public class cheetah extends Activity {
     // FIST PAGE BUTTONS
     public void onClickNewGame(View view) {
         setContentView(R.layout.modes_select_layout);
+        CheetahImageButton btnTmp;
+
+        btnTmp = (CheetahImageButton) findViewById(R.id.btnModePlus);
+        btnTmp.setText("EASY", 0);
+        btnTmp.setText("Addition", 1);
+        btnTmp.setText("I'm too young to die", 2);
+
+        btnTmp = (CheetahImageButton) findViewById(R.id.btnModeMinus);
+        btnTmp.setText("EASY", 0);
+        btnTmp.setText("Subtraction", 1);
+        btnTmp.setText("Hey, not too rough", 2);
+
+        btnTmp = (CheetahImageButton) findViewById(R.id.btnModeMult);
+        btnTmp.setText("NORMAL", 0);
+        btnTmp.setText("Multiplication", 1);
+        btnTmp.setText("Hurt me plenty", 2);
+
+        btnTmp = (CheetahImageButton) findViewById(R.id.btnModeDiv);
+        btnTmp.setText("HARD", 0);
+        btnTmp.setText("Division", 1);
+        btnTmp.setText("Ultra-Violence", 2);
+
+        btnTmp = (CheetahImageButton) findViewById(R.id.btnModeALL);
+        btnTmp.setText("ULTRA HARD", 0);
+        btnTmp.setText("All-In-One", 1);
+        btnTmp.setText("Nightmare!", 2);
     }
 
     public void onClickClose(View view) {
@@ -216,6 +244,26 @@ public class cheetah extends Activity {
         showCurrentTask();
     }
 
-    // FOURTH PAGE BUTTONS
-
+    // OTHER
+    private String getGameTypeString(int v) {
+        String s = "";
+        switch(v) {
+            case 0:
+                s = "all-in-one";
+                break;
+            case 1:
+                s = "addition";
+                break;
+            case 2:
+                s = "subtraction";
+                break;
+            case 3:
+                s = "multiplication";
+                break;
+            case 4:
+                s = "division";
+                break;
+        }
+        return s;
+    }
 }

@@ -27,7 +27,7 @@
     <string name = "digit_9">9</string>
     <string name = "GameOver">GAME OVER</string>
     <string name = "YouDoneIt">You have done it!</string>
-    <string name = "CurrGameMode">Game Mode:</string>
+    <string name = "CurrGameMode">Game mode:</string>
     <string name = "CurrGamePoints">Points total:</string>
     <string name = "CurrCorrAnswers">Correct answers:</string>
     <string name="action_settings">Settings</string>

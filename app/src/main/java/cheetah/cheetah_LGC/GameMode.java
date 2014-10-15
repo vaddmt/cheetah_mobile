@@ -179,4 +179,8 @@ public class GameMode {
     public int getCorrectAnswers() {
         return result.getCorrectAnswerCounter();
     }
+
+    public int getTotalQuestions() {
+        return result.getQuestionCounter();
+    }
 }

@@ -72,7 +72,8 @@
                     android:id="@+id/txtGM_ModeValue"
                     android:textColor="@color/yellow"
                     android:textSize="@dimen/text_size_24"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:gravity="right" />
             </TableRow>
 
             <TableRow
@@ -94,7 +95,8 @@
                     android:id="@+id/txtGM_PointsValue"
                     android:textColor="@color/yellow"
                     android:textSize="@dimen/text_size_24"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:gravity="right" />
             </TableRow>
 
             <TableRow
@@ -116,7 +118,8 @@
                     android:id="@+id/txtGM_AnswersValue"
                     android:textColor="@color/yellow"
                     android:textSize="@dimen/text_size_24"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:gravity="right" />
 
             </TableRow>
 

@@ -21,20 +21,23 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true">
 
-        <Button
+        <cheetah.cheetah_GUI.CheetahImageButton
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/action_add"
+            android:scaleType="fitStart"
             android:id="@+id/btnModePlus"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:onClick="onClickModeSelect"
-            />
-        <Button
+            android:onClick="onClickModeSelect" />
+        <cheetah.cheetah_GUI.CheetahImageButton
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/action_sub"
+            android:scaleType="fitStart"
             android:id="@+id/btnModeMinus"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -43,9 +46,11 @@
             android:layout_weight="1"
             android:onClick="onClickModeSelect"
             />
-        <Button
+        <cheetah.cheetah_GUI.CheetahImageButton
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/action_mul"
+            android:scaleType="fitStart"
             android:id="@+id/btnModeMult"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -54,9 +59,11 @@
             android:layout_weight="1"
             android:onClick="onClickModeSelect"
             />
-        <Button
+        <cheetah.cheetah_GUI.CheetahImageButton
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/action_div"
+            android:scaleType="fitStart"
             android:id="@+id/btnModeDiv"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
@@ -65,9 +72,11 @@
             android:layout_weight="1"
             android:onClick="onClickModeSelect"
             />
-        <Button
+        <cheetah.cheetah_GUI.CheetahImageButton
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/action_all"
+            android:scaleType="fitStart"
             android:id="@+id/btnModeALL"
             style="@style/ButtonSelect"
             android:layout_marginTop="5dp"
