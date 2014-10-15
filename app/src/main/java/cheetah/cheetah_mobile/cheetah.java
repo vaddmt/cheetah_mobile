@@ -74,10 +74,14 @@ public class cheetah extends Activity {
     // FIST PAGE BUTTONS
     public void onClickNewGame(View view) {
         setContentView(R.layout.modes_select_layout);
+        updateSecondPageButtonsText();
+    }
+
+    public void updateSecondPageButtonsText() {
         CheetahImageButton btnTmp;
 
         btnTmp = (CheetahImageButton) findViewById(R.id.btnModePlus);
-        btnTmp.setText("EASY", 0);
+        btnTmp.setText("VERY EASY", 0);
         btnTmp.setText("Addition", 1);
         btnTmp.setText("I'm too young to die", 2);
 
@@ -167,6 +171,7 @@ public class cheetah extends Activity {
     public void onClickBackToSelect(View view) {
         GM.endGame();
         setContentView(R.layout.modes_select_layout);
+        updateSecondPageButtonsText();
     }
 
     public void onClickAddDigit(View view) {
