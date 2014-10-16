@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.security.MessageDigest;
+
 import cheetah.cheetah_GUI.CheetahTextField;
 import cheetah.cheetah_GUI.ViewGraphics;
 import cheetah.cheetah_GUI.CheetahImageButton;
@@ -106,6 +109,10 @@ public class cheetah extends Activity {
         btnTmp.setText("Nightmare!", 2);
     }
 
+    public void onClickShowMyBest(View view) {
+        setContentView(R.layout.record_layout);
+    }
+
     public void onClickClose(View view) {
         System.exit(0);
     }
@@ -132,8 +139,7 @@ public class cheetah extends Activity {
         findViewById(R.id.btnGo).setEnabled(true);
     }
 
-    public void onClickStartGame(View view) {
-
+    synchronized public void onClickStartGame(View view) {
         Globals.drawAlpha = 0;
 
         try {
@@ -155,8 +161,8 @@ public class cheetah extends Activity {
                        }
                        else {
                            handler.sendEmptyMessage(1);
+                           Thread.sleep(1000);
                        }
-                       Thread.sleep(1000);
                    }
                    catch (InterruptedException ex) {
                        Messenger.showException("EXCEPTION in timer:", ex);

@@ -39,6 +39,7 @@
             android:id="@+id/btnRecords"
             style="@style/ButtonMain"
             android:layout_marginTop="5dp"
+            android:onClick="onClickShowMyBest"
             />
 
         <Button

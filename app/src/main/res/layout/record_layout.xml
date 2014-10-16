@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <cheetah.cheetah_GUI.ViewBackground
+        android:id="@+id/view_background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/BestResult"
+            android:id="@+id/textView"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size_48"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/red"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/tableLayout">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CurrGameMode"
+                    android:id="@+id/txtRESULT_Mode"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtRESULT_ModeValue"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1"
+                    android:gravity="right" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CurrGamePoints"
+                    android:id="@+id/txtRESULT_Points"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtRESULT_PointsValue"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1"
+                    android:gravity="right" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CurrCorrAnswers"
+                    android:id="@+id/txtRESULT_Answers"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtRESULT_AnswersValue"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/text_size_24"
+                    android:layout_weight="1"
+                    android:gravity="right" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/linearLayout">
+
+            <Button
+                style="@style/ButtonMain"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Back"
+                android:id="@+id/btnBackToMainFromResults"
+                android:onClick="onClickBackToMain"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEmpty"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
