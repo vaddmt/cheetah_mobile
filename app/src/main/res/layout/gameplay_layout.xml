@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtTimeLeft"
                 android:layout_weight="1"
-                android:textSize="@dimen/text_size_24"
+                android:textSize="@dimen/text_size_18"
                 android:gravity="center_vertical|left"
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/gray" />
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtPointsEarned"
                 android:layout_weight="1"
-                android:textSize="@dimen/text_size_24"
+                android:textSize="@dimen/text_size_18"
                 android:gravity="center_vertical|right"
                 android:layout_marginRight="5dp"
                 android:textColor="@color/gray" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtCurrOperation"
             android:textColor="@color/yellow"
-            android:textSize="@dimen/text_size_32"
+            android:textSize="@dimen/text_size_24"
             android:gravity="center_vertical|center_horizontal" />
 
         <cheetah.cheetah_GUI.CheetahTextField
