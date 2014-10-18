@@ -33,6 +33,7 @@ public class ViewGraphics extends View {
         Globals.drawAlpha = 255;
         Globals.drawColor = Color.argb(Globals.drawAlpha, r, g, b);
         Globals.drawMessage = text;
+        paint.setShadowLayer(25, 0, 0, Globals.drawColor);
     }
 
     private void init(Context context) {
@@ -41,7 +42,6 @@ public class ViewGraphics extends View {
             paint = new Paint();
             paint.setTextSize(120);
             paint.setTextAlign(Paint.Align.CENTER);
-            paint.setShadowLayer(50, 0, 0, Globals.drawColor);
         }
         catch (OutOfMemoryError ex) {
             Messenger.showError("ERROR:", ex);
@@ -53,10 +53,10 @@ public class ViewGraphics extends View {
         super.onDraw(canvas);
         if(Globals.drawAlpha > 0) {
             xPos = (canvas.getWidth() / 2);
-            yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2));// - canvas.getHeight() / 5);
+            yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2));
 
             paint.setARGB(Globals.drawAlpha, 0, 0, 0);
-            canvas.drawRect(0, yPos - 5, canvas.getWidth(), yPos + (paint.descent() + paint.ascent()) + 5, paint);
+            canvas.drawRect(0, yPos - 85, canvas.getWidth(), yPos, paint);
 
             paint.setARGB(Globals.drawAlpha,
                           Color.red(Globals.drawColor),

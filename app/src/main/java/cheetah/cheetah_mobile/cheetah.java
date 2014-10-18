@@ -151,6 +151,7 @@ public class cheetah extends Activity {
         try {
             GM = new GameMode(chosenGameType);
             GM.genNextTask();
+            setContentView(R.layout.gameplay_layout);
             showCurrentTask();
         }
         catch (OutOfMemoryError ex) {
@@ -200,7 +201,6 @@ public class cheetah extends Activity {
     }
 
     public void showCurrentTask() {
-        setContentView(R.layout.gameplay_layout);
         ((TextView)findViewById(R.id.txtFirstValue)).setText(Integer.toString(GM.getCurrentFirstVal()));
         ((TextView)findViewById(R.id.txtSecondValue)).setText(Integer.toString(GM.getCurrentSecondVal()));
         ((TextView)findViewById(R.id.txtPointsEarned)).setText("Points: " + Integer.toString(GM.getCurrentPoints()));
@@ -236,23 +236,15 @@ public class cheetah extends Activity {
         }
 
         if(GM.checkCurrentTask(answer) == 1) {
-            try {
-                ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("CORRECT", 0, 255, 0);
-            }
-            catch (final Exception ex) {
-                Messenger.showException("EXCEPTION in thread:", ex);
-            }
+            ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("CORRECT", 0, 255, 0);
         }
         else {
-            try {
-                ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("WRONG", 255, 0, 0);
-            }
-            catch (final Exception ex) {
-                Messenger.showException("EXCEPTION in thread:", ex);
-            }
+            ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("WRONG", 255, 0, 0);
         }
 
         GM.genNextTask();
+        findViewById(R.id.view_graphics).invalidate();
+        ((CheetahTextField)findViewById(R.id.txtResultValue)).setText("");
         showCurrentTask();
     }
 
