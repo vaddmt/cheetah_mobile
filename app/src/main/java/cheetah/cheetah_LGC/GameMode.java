@@ -127,7 +127,7 @@ public class GameMode {
                 bonus = 0;
                 break;
         }
-        return bonus +  + typeBonus + calculationWeight;
+        return bonus + typeBonus + calculationWeight;
     }
 
     public int checkCurrentTask(int answer) {

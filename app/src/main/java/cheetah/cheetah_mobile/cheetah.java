@@ -9,9 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.security.MessageDigest;
-
 import cheetah.cheetah_GUI.CheetahTextField;
 import cheetah.cheetah_GUI.ViewGraphics;
 import cheetah.cheetah_GUI.CheetahImageButton;
@@ -50,6 +47,15 @@ public class cheetah extends Activity {
                     ((TextView)findViewById(R.id.txtGM_PointsValue)).setText(Integer.toString(GM.getCurrentPoints()));
                     ((TextView)findViewById(R.id.txtGM_AnswersValue)).setText(Integer.toString(GM.getCorrectAnswers()) +
                                                                         "/" + Integer.toString(GM.getTotalQuestions()));
+                    this.sendEmptyMessageDelayed(3, 1000);
+                }
+                else if(msg.what == 3) {
+                    try {
+                        ((Button)findViewById(R.id.btnTryAgain)).setEnabled(true);
+                    }
+                    catch(NullPointerException ex) {
+                        Messenger.showException("EXCEPTION:", ex);
+                    }
                 }
             }
         };
@@ -221,36 +227,31 @@ public class cheetah extends Activity {
 
     public void onClickGetNextTask(View view) {
         int answer = 0;
+
         try {
             answer = Integer.parseInt(((CheetahTextField)findViewById(R.id.txtResultValue)).getText().toString());
         }
         catch (NumberFormatException ex) {
             answer = 0;
         }
+
         if(GM.checkCurrentTask(answer) == 1) {
-            runOnUiThread(new Runnable() {
-                public void run() {
-                    try {
-                        ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("CORRECT", 0, 255, 0);
-                    }
-                    catch (final Exception ex) {
-                        Messenger.showException("EXCEPTION in thread:", ex);
-                    }
-                }
-            });
+            try {
+                ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("CORRECT", 0, 255, 0);
+            }
+            catch (final Exception ex) {
+                Messenger.showException("EXCEPTION in thread:", ex);
+            }
         }
         else {
-            runOnUiThread(new Runnable() {
-                public void run() {
-                    try {
-                        ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("WRONG", 255, 0, 0);
-                    }
-                    catch (final Exception ex) {
-                        Messenger.showException("EXCEPTION in thread:", ex);
-                    }
-                }
-            });
+            try {
+                ((ViewGraphics)findViewById(R.id.view_graphics)).throwGraphics("WRONG", 255, 0, 0);
+            }
+            catch (final Exception ex) {
+                Messenger.showException("EXCEPTION in thread:", ex);
+            }
         }
+
         GM.genNextTask();
         showCurrentTask();
     }

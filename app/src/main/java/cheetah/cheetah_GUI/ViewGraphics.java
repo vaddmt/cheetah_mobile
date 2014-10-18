@@ -53,7 +53,7 @@ public class ViewGraphics extends View {
         super.onDraw(canvas);
         if(Globals.drawAlpha > 0) {
             xPos = (canvas.getWidth() / 2);
-            yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2) - canvas.getHeight() / 5);
+            yPos = (int) ((canvas.getHeight() / 2) - ((paint.descent() + paint.ascent()) / 2));// - canvas.getHeight() / 5);
 
             paint.setARGB(Globals.drawAlpha, 0, 0, 0);
             canvas.drawRect(0, yPos - 5, canvas.getWidth(), yPos + (paint.descent() + paint.ascent()) + 5, paint);
