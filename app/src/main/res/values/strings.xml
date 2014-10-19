@@ -5,6 +5,7 @@
     <string name = "NewGame">NEW GAME</string>
     <string name = "Records">RECORDS</string>
     <string name = "About">ABOUT</string>
+    <string name = "INFORMATION">INFORMATION</string>
     <string name = "Exit">EXIT</string>
     <string name = "Back">BACK</string>
     <string name = "GO">GO and CALC</string>
@@ -32,5 +33,8 @@
     <string name = "CurrGamePoints">Points total:</string>
     <string name = "CurrCorrAnswers">Correct answers:</string>
     <string name="action_settings">Settings</string>
+    <string name="Citate">ARS LONGA, VITA BREVIS
+        SENEKA</string>
+    <string name="About_text">This application is completely  free of charge. This app is designed for students younger and middle school and others who want to improve their skills of computing.</string>
 
 </resources>

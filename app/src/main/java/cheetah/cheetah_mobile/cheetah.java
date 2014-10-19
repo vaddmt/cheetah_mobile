@@ -119,6 +119,10 @@ public class cheetah extends Activity {
         setContentView(R.layout.record_layout);
     }
 
+    public void onClickShowAbout(View view) {
+        setContentView(R.layout.about_layout);
+    }
+
     public void onClickClose(View view) {
         System.exit(0);
     }
