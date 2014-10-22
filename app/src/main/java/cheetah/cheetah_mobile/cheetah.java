@@ -13,15 +13,19 @@ import cheetah.cheetah_GUI.CheetahTextField;
 import cheetah.cheetah_GUI.ViewGraphics;
 import cheetah.cheetah_GUI.CheetahImageButton;
 import cheetah.cheetah_LGC.GameMode;
+import cheetah.cheetah_LGC.GameResult;
+import cheetah.cheetah_MGR.FileManager;
 import cheetah.cheetah_MGR.Globals;
 import cheetah.cheetah_MGR.Messenger;
 
 public class cheetah extends Activity {
 
-    private GameMode GM;
-    private int      chosenGameType = 0;
-    private Handler  handler;
-    private Thread   time;
+    private GameMode    GM;
+    private int         chosenGameType = 0;
+    private GameResult  bestGame = new GameResult();
+    private Handler     handler;
+    private Thread      time;
+    private FileManager FM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,18 @@ public class cheetah extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
 
         GM = new GameMode(0);
+        FM = new FileManager();
+        FM.CreateFile(getApplicationContext(), "CMD.dat");
+        String[] tmpRes = FM.ReadResultFromFile(getApplicationContext(), "CMD.dat");
+        try {
+            bestGame.setQuestionCounter(Integer.parseInt(tmpRes[0]));
+            bestGame.setCorrectAnswerCounter(Integer.parseInt(tmpRes[1]));
+            bestGame.setPointsTotal(Integer.parseInt(tmpRes[2]));
+        }
+        catch (NumberFormatException ex) {
+            Messenger.showException("EXCEPTION:", ex);
+        }
+
         handler = new Handler() {
             public void handleMessage(android.os.Message msg) {
                 if(msg.what == 1) {
@@ -48,6 +64,12 @@ public class cheetah extends Activity {
                     ((TextView)findViewById(R.id.txtGM_AnswersValue)).setText(Integer.toString(GM.getCorrectAnswers()) +
                                                                         "/" + Integer.toString(GM.getTotalQuestions()));
                     this.sendEmptyMessageDelayed(3, 1000);
+                    if(GM.getGameResult().isBiggerThan(bestGame)) {
+                        bestGame.setQuestionCounter(GM.getTotalQuestions());
+                        bestGame.setCorrectAnswerCounter(GM.getCorrectAnswers());
+                        bestGame.setPointsTotal(GM.getCurrentPoints());
+                        FM.WriteResultToFile(getApplicationContext(), "CMD.dat", bestGame);
+                    }
                 }
                 else if(msg.what == 3) {
                     try {
@@ -117,6 +139,9 @@ public class cheetah extends Activity {
 
     public void onClickShowMyBest(View view) {
         setContentView(R.layout.record_layout);
+        ((TextView)findViewById(R.id.txtRESULT_AnswersValue)).setText(Integer.toString(bestGame.getCorrectAnswerCounter())
+                                                                    + "/" + Integer.toString(bestGame.getQuestionCounter()));
+        ((TextView)findViewById(R.id.txtRESULT_PointsValue)).setText(Integer.toString(bestGame.getPointsTotal()));
     }
 
     public void onClickShowAbout(View view) {

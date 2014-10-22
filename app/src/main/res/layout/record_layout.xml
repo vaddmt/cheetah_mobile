@@ -44,29 +44,6 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/CurrGameMode"
-                    android:id="@+id/txtRESULT_Mode"
-                    android:textColor="@color/yellow"
-                    android:textSize="@dimen/text_size_24"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtRESULT_ModeValue"
-                    android:textColor="@color/yellow"
-                    android:textSize="@dimen/text_size_24"
-                    android:layout_weight="1"
-                    android:gravity="right" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
                     android:text="@string/CurrGamePoints"
                     android:id="@+id/txtRESULT_Points"
                     android:textColor="@color/yellow"

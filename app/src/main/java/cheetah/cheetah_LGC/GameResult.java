@@ -14,6 +14,22 @@ public class GameResult {
         pointsTotal = 0;
     }
 
+    public boolean isBiggerThan(GameResult other) {
+        return this.getPointsTotal() > other.getPointsTotal();
+    }
+
+    public void setQuestionCounter(int v) {
+        questionCounter = v;
+    }
+
+    public void setCorrectAnswerCounter(int v) {
+        correctAnswerCounter = v;
+    }
+
+    public void setPointsTotal(int v) {
+        pointsTotal = v;
+    }
+
     public void increaseQuestionCounter() {
         questionCounter++;
     }

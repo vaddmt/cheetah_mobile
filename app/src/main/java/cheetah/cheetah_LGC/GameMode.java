@@ -183,4 +183,8 @@ public class GameMode {
     public int getTotalQuestions() {
         return result.getQuestionCounter();
     }
+
+    public GameResult getGameResult() {
+        return result;
+    }
 }
