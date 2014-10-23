@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
     android:background="@drawable/background">
 
     <cheetah.cheetah_GUI.ViewBackground
@@ -28,55 +28,34 @@
             android:layout_marginTop="30dp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/Citate"
-            android:id="@+id/citateTextView"
+            android:id="@+id/txtAbout"
             android:textColor="@color/yellow"
             android:textSize="@dimen/text_size_24"
-            android:gravity="center_vertical|center_horizontal"
             android:layout_marginTop="30dp"
-            android:textStyle="bold"
-            android:inputType="textMultiLine"
-            android:editable="false"/>
+            android:gravity="center_horizontal" />
 
-        <TableLayout
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:id="@+id/tableLayout">
+            android:text="@string/Seneka"
+            android:id="@+id/txtAboutAuthor"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size_24"
+            android:gravity="center_horizontal" />
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtAbout"
-                    android:textColor="@color/yellow"
-                    android:textSize="@dimen/text_size_24"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text="@string/About_text"
-                    android:textAlignment="gravity"/>
-            </TableRow>
-        </TableLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/About_text"
+            android:id="@+id/txtAboutText"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size_24"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal" />
 
         <LinearLayout
             android:orientation="horizontal"

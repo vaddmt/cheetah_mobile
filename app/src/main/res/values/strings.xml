@@ -32,9 +32,9 @@
     <string name = "CurrGameMode">Game mode:</string>
     <string name = "CurrGamePoints">Points total:</string>
     <string name = "CurrCorrAnswers">Correct answers:</string>
-    <string name="action_settings">Settings</string>
-    <string name="Citate">ARS LONGA, VITA BREVIS
-        SENEKA</string>
-    <string name="About_text">This application is completely  free of charge. The app is designed for students of younger and middle school and others who wants to improve their skills of computing.</string>
+    <string name = "action_settings">Settings</string>
+    <string name = "Citate">ARS LONGA, VITA BREVIS</string>
+    <string name = "Seneka">SENEKA</string>
+    <string name = "About_text">This application is completely  free of charge. The app is designed for students of younger and middle school and others who wants to improve their skills of computing.</string>
 
 </resources>
