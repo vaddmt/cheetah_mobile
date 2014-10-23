@@ -27,7 +27,7 @@
     <string name = "digit_8">8</string>
     <string name = "digit_9">9</string>
     <string name = "GameOver">GAME OVER</string>
-    <string name = "BestResult">BEST RESULT</string>
+    <string name = "BestResult">BEST RESULTS</string>
     <string name = "YouDoneIt">You have done it!</string>
     <string name = "CurrGameMode">Game mode:</string>
     <string name = "CurrGamePoints">Points total:</string>
@@ -35,6 +35,6 @@
     <string name="action_settings">Settings</string>
     <string name="Citate">ARS LONGA, VITA BREVIS
         SENEKA</string>
-    <string name="About_text">This application is completely  free of charge. This app is designed for students younger and middle school and others who want to improve their skills of computing.</string>
+    <string name="About_text">This application is completely  free of charge. The app is designed for students of younger and middle school and others who wants to improve their skills of computing.</string>
 
 </resources>
